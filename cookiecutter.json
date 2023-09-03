@@ -1,0 +1,4 @@
+{
+    "project_slug": "example",
+    "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}"
+}
