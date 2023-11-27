@@ -1,13 +1,15 @@
+VENV_NAME = {{cookiecutter.project_slug}}
+
 build-venv:
-	pew new -p=python3.10 -a . -r requirements.txt {{cookiecutter.project_slug}}
+	pew new -p=python3.10 -a . -r requirements.txt $(VENV_NAME)
 
 
 lock: requirements.txt
 
 
 sync:
-	pip-sync requirements.txt
+	pew in $(VENV_NAME) pip-sync requirements.txt
 
 
 %.txt: %.in
-	pip-compile --generate-hashes --output-file $@ $<
+	pew in $(VENV_NAME) pip-compile --generate-hashes --output-file $@ $<
