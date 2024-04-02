@@ -1,6 +1,6 @@
 Django~=4.1.13
 djangorestframework~=3.14.0
 dj_database_url
-black
+black>=24.3.0
 ipython
 pip-tools
