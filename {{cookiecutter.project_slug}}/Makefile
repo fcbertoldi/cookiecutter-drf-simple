@@ -1,4 +1,5 @@
 VENV_NAME = {{cookiecutter.project_slug}}
+PYTHON_VERSION = python{{cookiecutter.python_version}}
 UV_TOOL := $(shell command -v uv)
 
 ifeq ($(UV_TOOL),)
@@ -13,7 +14,7 @@ endif
 
 
 build-venv:
-	pew new -p=python3.10 -a . -r requirements.txt $(VENV_NAME)
+	pew new -p=$(PYTHON_VERSION) -a . -r requirements.txt $(VENV_NAME)
 
 
 lock: requirements.txt
