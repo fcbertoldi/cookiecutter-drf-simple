@@ -13,3 +13,9 @@ extend-exclude = """
 
 )
 """
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "{{cookiecutter.package_name}}.settings"
+testpaths = [
+    "tests",
+]
