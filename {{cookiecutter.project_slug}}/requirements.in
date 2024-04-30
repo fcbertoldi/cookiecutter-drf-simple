@@ -7,3 +7,4 @@ ipython
 pip-tools
 pytest
 pytest-django
+pre-commit
