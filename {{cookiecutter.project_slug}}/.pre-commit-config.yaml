@@ -24,3 +24,11 @@ repos:
     hooks:
     # Run the linter.
     -   id: ruff
+
+-   repo: local
+    hooks:
+    -   id: django-manage-check
+        name: Run Django's system check
+        language: system
+        entry: make django-check
+        pass_filenames: false

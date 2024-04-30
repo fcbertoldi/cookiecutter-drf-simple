@@ -1,6 +1,6 @@
 [project]
 name = "{{cookiecutter.project_slug}}"
-requires-python = "~=python{{cookiecutter.python_version}}.0"
+requires-python = ">={{cookiecutter.python_version}}.0"
 
 [tool.black]
 line-length = 88
@@ -14,8 +14,12 @@ extend-exclude = """
 )
 """
 
+[tool.ruff]
+line-length = 88
+
 [tool.ruff.lint]
-ignore = ["E501"]
+select = ["E", "F"]
+ignore = ["E501", "E741"]
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "{{cookiecutter.package_name}}.settings"
