@@ -26,3 +26,6 @@ DJANGO_SETTINGS_MODULE = "{{cookiecutter.package_name}}.settings"
 testpaths = [
     "tests",
 ]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
