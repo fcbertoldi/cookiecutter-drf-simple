@@ -1,6 +1,7 @@
 Django~=5.0
 djangorestframework~=3.15
-dj_database_url
+dj-database-url
+django-cache-url
 sqlparse>=0.5.0
 black>=24.3.0
 ipython
@@ -9,3 +10,4 @@ pytest
 pytest-django
 pre-commit
 bandit[toml]
+environs
