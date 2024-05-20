@@ -3,18 +3,19 @@ PYTHON_VERSION = python{{cookiecutter.python_version}}
 UV_TOOL := $(shell command -v uv)
 
 ifeq ($(UV_TOOL),)
-	PIP := python -m pip
+	PIP_CMD := pip
 	PIP_COMPILE := pip-compile
 	PIP_SYNC := pip-sync --pip-args "--no-deps"
 else
-	PIP := $(UV_TOOL) pip
+	PIP_CMD := uv
 	PIP_COMPILE := $(UV_TOOL) pip compile
 	PIP_SYNC := $(UV_TOOL) pip sync
+	PIP_OPTION := --pip="$(UV_TOOL) pip"
 endif
 
 
 build-venv:
-	pew new -p=$(PYTHON_VERSION) -a . -r requirements.txt $(VENV_NAME)
+	pew new -p=$(PYTHON_VERSION) --pip=$(PIP_CMD) -a . -r requirements.txt $(VENV_NAME)
 
 
 lock: requirements.txt
