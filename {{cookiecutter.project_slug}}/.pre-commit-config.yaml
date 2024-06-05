@@ -32,6 +32,11 @@ repos:
         args: ["-c", "pyproject.toml", "-r", "."]
         additional_dependencies: ["bandit[toml]"]
 
+-   repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.3
+    hooks:
+      - id: gitleaks-system
+
 -   repo: local
     hooks:
     -   id: django-manage-check
