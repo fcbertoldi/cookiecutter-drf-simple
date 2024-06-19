@@ -14,6 +14,10 @@ else
 endif
 
 
+pre-commit-install:
+	pre-commit install --install-hooks --overwrite
+
+
 build-venv:
 	pew new -p=$(PYTHON_VERSION) --pip=$(PIP_CMD) -a . -r requirements.txt $(VENV_NAME)
 
@@ -57,4 +61,4 @@ bandit:
 	pew in $(VENV_NAME) $(PIP_COMPILE) --generate-hashes --output-file $@ $<
 
 
-.PHONY: lock sync build-venv runserver test django-check black ruff-check ruff-fix bandit
+.PHONY: pre-commit-install lock sync build-venv runserver test django-check black ruff-check ruff-fix bandit
