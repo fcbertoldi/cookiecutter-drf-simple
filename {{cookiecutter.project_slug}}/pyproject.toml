@@ -1,6 +1,6 @@
 [project]
 name = "{{cookiecutter.project_slug}}"
-requires-python = ">={{cookiecutter.python_version}}.0"
+requires-python = ">={{cookiecutter.python_version}}"
 
 [tool.black]
 line-length = 88

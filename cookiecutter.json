@@ -1,5 +1,5 @@
 {
     "project_slug": "example",
     "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
-    "python_version": "3.10"
+    "python_version": "3.11"
 }
