@@ -19,7 +19,7 @@ pre-commit-install:
 
 
 build-venv:
-	pew new -p=$(PYTHON_VERSION) --pip=$(PIP_CMD) -a . -r requirements.txt $(VENV_NAME)
+	pew new -p=$(PYTHON_VERSION) --pip=$(PIP_CMD) -d -a . $(VENV_NAME)
 
 
 lock: requirements.txt
